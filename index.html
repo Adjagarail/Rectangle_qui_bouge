@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <title>Rectangle qui bouge</title>
+    <meta charset="utf-8">
+  </head>
+  <style media="screen">
+  .group_button
+  {
+    position: relative;
+    margin: 380px;
+  }
+  .button
+  {
+    padding: 5px 3px 3px;
+    margin: 5px;
+  }
+  .carré
+  {
+    background-color:#000cff;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    left: 430px;
+    top: 200px;
+  }
+  </style>
+  <body>
+<div class="carré" id="carré">
+
+</div>
+
+
+
+
+<div class="group_button">
+  <input class="button" type="button" id="redimentionner" value="Redimentionnement">
+  <input class="button" type="button" id="changer" value="Couleur Verte">
+  <input class="button" type="button" id="initial" value="Couleur Initiale">
+  <input class="button" type="button" id="plouf" value="Faire disparaite figure">
+  <input class="button" type="button" id="plaf" value="Faire Réapparetre figure">
+</div>
+
+
+    <script type="text/javascript">
+              var figure=document.getElementById('carré');
+              var change=document.getElementById('changer');
+              var dimension=document.getElementById('redimentionner');
+              var init=document.getElementById('initial');
+              var drop=document.getElementById('plouf');
+              var drag=document.getElementById('plaf');
+              change.addEventListener('click',changer);
+              dimension.addEventListener('click',dimensioner);
+              init.addEventListener('click',initialiser);
+              drop.addEventListener('click',supprimer);
+              drag.addEventListener('click',ramener);
+
+
+              function changer()
+              {
+                    figure.style.backgroundColor="#45ff00";
+              }
+                    function dimensioner()
+                    {
+                          figure.style.width="400px";
+                          figure.style.height="400px";
+                    }
+                          function initialiser()
+                          {
+                              figure.style.backgroundColor="#000cff";
+                          }
+                              function supprimer()
+                              {
+                                figure.style.backgroundColor="initial";
+                              }
+                                    function ramener()
+                                    {
+                                      figure.style.backgroundColor="#000cff";
+                                    }
+    </script>
+  </body>
+</html>
